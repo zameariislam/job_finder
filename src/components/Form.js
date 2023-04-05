@@ -2,10 +2,10 @@ import React from 'react';
 
 const Form = () => {
     return (
-        <div class="max-w-3xl mx-auto">
-            <form class="space-y-6">
-                <div class="fieldContainer">
-                    <label for="lws-JobTitle" class="text-sm font-medium text-slate-300">Job Title</label>
+        <div className="max-w-3xl mx-auto">
+            <form className="space-y-6">
+                <div className="fieldContainer">
+                    <label for="lws-JobTitle" className="text-sm font-medium text-slate-300">Job Title</label>
                     <select id="lws-JobTitle" name="lwsJobTitle" required>
                         <option value="" hidden selected>Select Job</option>
                         <option>Software Engineer</option>
@@ -25,7 +25,7 @@ const Form = () => {
                     </select>
                 </div>
 
-                <div class="fieldContainer">
+                <div className="fieldContainer">
                     <label for="lws-JobType">Job Type</label>
                     <select id="lws-JobType" name="lwsJobType" required>
                         <option value="" hidden selected>Select Job Type</option>
@@ -35,10 +35,10 @@ const Form = () => {
                     </select>
                 </div>
 
-                <div class="fieldContainer">
+                <div className="fieldContainer">
                     <label for="lws-JobSalary">Salary</label>
-                    <div class="flex border rounded-md shadow-sm border-slate-600">
-                        <span class="input-tag">BDT</span>
+                    <div className="flex border rounded-md shadow-sm border-slate-600">
+                        <span className="input-tag">BDT</span>
                         <input type="number" name="lwsJobSalary" id="lws-JobSalary" required class="!rounded-l-none !border-0"
                             placeholder="20,00,000" />
                     </div>
@@ -49,8 +49,8 @@ const Form = () => {
                     <input type="date" name="lwsJobDeadline" id="lws-JobDeadline" required />
                 </div>
 
-                <div class="text-right">
-                    <button type="submit" id="lws-submit" class="cursor-pointer btn btn-primary w-fit">
+                <div className="text-right">
+                    <button type="submit" id="lws-submit" className="cursor-pointer btn btn-primary w-fit">
                         Submit
                     </button>
                 </div>

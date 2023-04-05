@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const JobList = () => {
     return (
@@ -26,12 +27,15 @@ const JobList = () => {
                 </div>
             </div>
             <div class="mt-5 flex lg:mt-0 lg:ml-4">
+                <Link to={'/editJob'} >
                 <span class="hidden sm:block">
                     <button type="button" class="lws-edit btn btn-primary">
                         <i class="fa-solid fa-pen text-gray-300 -ml-1 mr-2"></i>
                         Edit
                     </button>
                 </span>
+                </Link>
+                
 
                 <span class="sm:ml-3">
                     <button type="button" class="lws-delete btn btn-danger ">
