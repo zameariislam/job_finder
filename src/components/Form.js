@@ -1,17 +1,46 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createJob } from '../features/jobs/jobSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeJob, createJob, editInActive } from '../features/jobs/jobSlice';
 import { useNavigate } from 'react-router-dom';
 
 
 const Form = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const { editing } = useSelector((state) => state.job)
 
     const [job, setJob] = useState(' ')
     const [jobType, setJobType] = useState(' ')
     const [salary, setSalary] = useState(' ')
     const [deadLine, setDeadLine] = useState(' ')
+    const [editMode, setEditMode] = useState(false)
+
+
+    useEffect(() => {
+        if (editing?.id) {
+            const { title, type, salary, deadLine } = editing
+
+            setJob(title)
+            console.log('job..', job)
+            setJobType(type)
+            setSalary(salary)
+            setDeadLine(deadLine)
+            setEditMode(true)
+
+        }
+        else {
+            setJob(' ')
+            setJobType(' ')
+            setSalary(' ')
+            setDeadLine(' ')
+            setEditMode(false)
+
+        }
+
+    }, [editing?.id])
+    console.log(editMode)
+
+
 
 
     const handleSubmit = (e) => {
@@ -24,33 +53,53 @@ const Form = () => {
             salary,
             deadLine
         }
+        console.log(jobDetail)
 
         dispatch(createJob(jobDetail))
+
         navigate('/')
-
-
-
-
-
-
-
-
-
 
     }
 
+    const handleEdit = (e) => {
+        e.preventDefault()
+        console.log('edit')
+
+        const jobDetail = {
+            id: editing?.id,
+
+            data: {
+                title: job,
+                type: jobType,
+                salary,
+                deadLine
+            }
+        }
+        console.log(jobDetail)
+
+        dispatch(changeJob(jobDetail))
+        dispatch(editInActive())
+
+
+
+        navigate('/')
+
+    }
 
     return (
         <div className="max-w-3xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={editMode ? handleEdit : handleSubmit} className="space-y-6">
                 <div className="fieldContainer">
                     <label for="lws-JobTitle" className="text-sm font-medium text-slate-300">Job Title</label>
                     <select id="lws-JobTitle"
+
+
+                        value={job}
                         onChange={(e) => setJob(e.target.value)}
                         name="lwsJobTitle" required>
-                        <option value="" hidden selected>Select Job</option>
+                        <option hidden selected>Select Job</option>
 
-                        <option value={'Software Developer'} >Software Developer</option>
+                        <option value={'Software Devoloper'} >Software Devoloper</option>
                         <option value={'Full Stack Developer'}  >Full Stack Developer</option>
                         <option value={'MERN Stack Developer'}  >MERN Stack Developer</option>
                         <option value={'DevOps Engineer'} >DevOps Engineer</option>
@@ -63,7 +112,7 @@ const Form = () => {
                 <div className="fieldContainer">
                     <label for="lws-JobType">Job Type</label>
                     <select id="lws-JobType"
-
+                        value={jobType}
                         onChange={(e) => setJobType(e.target.value)}
                         name="lwsJobType" required>
                         <option value=" " hidden selected>Select Job Type</option>

@@ -22,9 +22,12 @@ export const deleteTJob = async (id) => {
 
 }
 
-export const editJob = async ({ id, data }) => {
+export const editJob = async ( id, data ) => {
+    console.log(id,data)
+    
 
-    const response = await axios.put(`/jobss/${id}`, data)
+    const response = await axios.put(`/jobs/${id}`, data)
+    console.log('res',response.data)
     return response.data
 
 }

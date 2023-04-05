@@ -3,79 +3,51 @@
     {
       "title": "DevOps Engineer",
       "type": "Internship",
-      "salary": "25002",
-      "deadline": "2024-12-31",
+      "salary": "250000",
+      "deadLine": "2024-12-31",
       "id": 2
     },
     {
-      "title": "QA Engineer",
-      "type": "Full Time",
-      "salary": "15000",
-      "deadline": "2023-12-31",
-      "id": 3
-    },
-    {
-      "title": "Product Manager",
-      "type": "Remote",
-      "salary": "18000",
-      "deadline": "2023-12-31",
-      "id": 4
-    },
-    {
-      "title": "Social Media Manager",
-      "type": "Internship",
-      "salary": "20000",
-      "deadline": "2023-11-30",
-      "id": 5
-    },
-    {
-      "title": "Android App Developer",
-      "type": "Remote",
-      "salary": "35000",
-      "deadline": "2023-12-31",
-      "id": 6
-    },
-    {
       "title": "Full Stack Developer",
       "type": "Internship",
       "salary": "18000",
-      "deadline": "2023-12-31",
+      "deadLine": "2023-12-31",
       "id": 7
     },
     {
-      "title": "Software Developer",
+      "title": "Software Devoloper",
       "type": "Full Time",
-      "salary": "21000",
-      "deadLine": "2023-04-08",
-      "id": 8
+      "salary": "35000",
+      "deadLine": "2023-04-15",
+      "id": 15
     },
     {
-      "title": "Software Developer",
-      "type": "Internship",
-      "salary": "21000",
-      "deadLine": "2023-04-08",
-      "id": 9
-    },
-    {
-      "title": "Full Stack Developer",
-      "type": "Internship",
-      "salary": "10000",
-      "deadLine": "2023-04-08",
-      "id": 10
+      "title": "MERN Stack Developer",
+      "type": "Full Time",
+      "salary": "34000",
+      "deadLine": "2023-04-12",
+      "id": 16
     },
     {
       "title": "Frontend Engineer",
       "type": "Remote",
-      "salary": "25000",
-      "deadLine": "2023-04-30",
-      "id": 11
+      "salary": "50000",
+      "deadLine": "2023-04-15",
+      "id": 17
     },
     {
-      "title": "DevOps Engineer",
+      "title": "Full Stack Developer",
       "type": "Full Time",
-      "salary": "100000",
+      "salary": "23000",
+      "deadLine": "2023-04-15",
+      "id": 18
+    },
+    {
+      "title": "Frontend Engineer",
+      "type": "Full Time",
+      "salary": "20000",
       "deadLine": "2023-04-21",
-      "id": 12
+      "id": 19
     }
   ]
 }
